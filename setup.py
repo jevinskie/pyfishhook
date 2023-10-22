@@ -42,7 +42,7 @@ setup(
         "fallback_version": "0.1.0",
     },
     license="BSD-3-Clause",
-    description="Python bindings and bundled build of fishhook: A library that enables dynamically rebinding symbols in Mach-O binaries running on  macOS/iOSS.",
+    description="Python bindings and bundled build of fishhook: A library that enables dynamically rebinding symbols in Mach-O binaries running on  macOS/iOS.",
     long_description="{}\n{}".format(
         re.compile("^.. start-badges.*^.. end-badges", re.M | re.S).sub("", read("README.rst")),
         re.sub(":[a-z]+:`~?(.*?)`", r"``\1``", read("CHANGELOG.rst")),
@@ -60,9 +60,7 @@ setup(
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: BSD License",
-        "Operating System :: Unix",
-        "Operating System :: POSIX",
-        "Operating System :: Microsoft :: Windows",
+        "Operating System :: MacOS",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3 :: Only",
@@ -73,10 +71,6 @@ setup(
         "Programming Language :: Python :: 3.12",
         "Programming Language :: Python :: Implementation :: CPython",
         "Programming Language :: Python :: Implementation :: PyPy",
-        # uncomment if you test on these interpreters:
-        # "Programming Language :: Python :: Implementation :: IronPython",
-        # "Programming Language :: Python :: Implementation :: Jython",
-        # "Programming Language :: Python :: Implementation :: Stackless",
         "Topic :: Utilities",
     ],
     project_urls={
@@ -85,7 +79,8 @@ setup(
         "Issue Tracker": "https://github.com/jevinskie/pyfishhook/issues",
     },
     keywords=[
-        # eg: "keyword1", "keyword2", "keyword3",
+        "fishhook",
+        "hooking",
     ],
     python_requires=">=3.8",
     install_requires=[
@@ -101,7 +96,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "pyfishhook = fishhook.cli:main",
+            "pyfishhook-test = fishhook.cli:main",
         ]
     },
     ext_modules=[

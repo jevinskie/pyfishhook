@@ -38,7 +38,7 @@ default_context:
     package_name: "fishhook"
     pre_commit: "yes"
     project_name: "pyfishhook"
-    project_short_description: "Python bindings and bundled build of fishhook: A library that enables dynamically rebinding symbols in Mach-O binaries running on  macOS/iOSS."
+    project_short_description: "Python bindings and bundled build of fishhook: A library that enables dynamically rebinding symbols in Mach-O binaries running on  macOS/iOS."
     pypi_badge: "yes"
     pypi_disable_upload: "no"
     release_date: "today"

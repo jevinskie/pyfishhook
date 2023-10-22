@@ -65,7 +65,7 @@ Overview
 .. end-badges
 
 Python bindings and bundled build of fishhook: A library that enables dynamically rebinding symbols in Mach-O binaries
-running on  macOS/iOSS.
+running on  macOS/iOS.
 
 * Free software: BSD 3-Clause License
 
