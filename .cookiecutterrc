@@ -1,0 +1,61 @@
+# This file exists so you can easily regenerate your project.
+#
+# `cookiepatcher` is a convenient shim around `cookiecutter`
+# for regenerating projects (it will generate a .cookiecutterrc
+# automatically for any template). To use it:
+#
+#    pip install cookiepatcher
+#    cookiepatcher gh:ionelmc/cookiecutter-pylibrary pyfishhook
+#
+# See:
+#    https://pypi.org/project/cookiepatcher
+#
+# Alternatively, you can run:
+#
+#    cookiecutter --overwrite-if-exists --config-file=pyfishhook/.cookiecutterrc gh:ionelmc/cookiecutter-pylibrary
+
+default_context:
+    allow_tests_inside_package: "no"
+    c_extension_function: "longest"
+    c_extension_module: "_fishhook"
+    c_extension_optional: "no"
+    c_extension_support: "yes"
+    codacy: "no"
+    codacy_projectid: "4fb5a9fd3f9743518b46fac164025a39"
+    codeclimate: "yes"
+    codecov: "yes"
+    command_line_interface: "argparse"
+    command_line_interface_bin_name: "pyfishhook"
+    coveralls: "yes"
+    distribution_name: "pyfishhook"
+    email: "jevinsweval@gmail.com"
+    formatter_quote_style: "double"
+    full_name: "Jevin Sweval"
+    github_actions: "yes"
+    github_actions_osx: "yes"
+    github_actions_windows: "yes"
+    license: "BSD 3-Clause License"
+    package_name: "fishhook"
+    pre_commit: "yes"
+    project_name: "pyfishhook"
+    project_short_description: "Python bindings and bundled build of fishhook: A library that enables dynamically rebinding symbols in Mach-O binaries running on  macOS/iOSS."
+    pypi_badge: "yes"
+    pypi_disable_upload: "no"
+    release_date: "today"
+    repo_hosting: "github.com"
+    repo_hosting_domain: "github.com"
+    repo_main_branch: "main"
+    repo_name: "pyfishhook"
+    repo_username: "jevinskie"
+    scrutinizer: "yes"
+    setup_py_uses_setuptools_scm: "yes"
+    sphinx_docs: "yes"
+    sphinx_docs_hosting: "https://pyfishhook.readthedocs.io/"
+    sphinx_doctest: "yes"
+    sphinx_theme: "sphinx-rtd-theme"
+    test_matrix_separate_coverage: "no"
+    version: "0.1.0"
+    version_manager: "bump2version"
+    website: "https://blog.ionelmc.ro"
+    year_from: "2023"
+    year_to: "2023"
