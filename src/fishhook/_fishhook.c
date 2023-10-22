@@ -1,6 +1,6 @@
 #include "Python.h"
 
-static PyObject* longest(PyObject *self, PyObject *value) {
+static PyObject *longest(PyObject *self, PyObject *value) {
     PyObject *module;
     PyObject *module_dict;
     PyObject *len;
@@ -13,7 +13,7 @@ static PyObject* longest(PyObject *self, PyObject *value) {
         return NULL;
 
     module_dict = PyModule_GetDict(module);
-    len = PyDict_GetItemString(module_dict, "len");
+    len         = PyDict_GetItemString(module_dict, "len");
     if (!len) {
         Py_DECREF(module);
         return NULL;
@@ -49,24 +49,21 @@ static PyObject* longest(PyObject *self, PyObject *value) {
 
 PyDoc_STRVAR(longest_doc, "Docstring for longest function.");
 
-static struct PyMethodDef module_functions[] = {
-    {"longest", longest, METH_O, longest_doc},
-    {NULL, NULL}
-};
+static struct PyMethodDef module_functions[] = {{"longest", longest, METH_O, longest_doc}, {NULL, NULL}};
 
 static struct PyModuleDef moduledef = {
     PyModuleDef_HEAD_INIT,
     "fishhook._fishhook", /* m_name */
-    NULL,             /* m_doc */
-    -1,               /* m_size */
-    module_functions, /* m_methods */
-    NULL,             /* m_reload */
-    NULL,             /* m_traverse */
-    NULL,             /* m_clear */
-    NULL,             /* m_free */
+    NULL,                 /* m_doc */
+    -1,                   /* m_size */
+    module_functions,     /* m_methods */
+    NULL,                 /* m_reload */
+    NULL,                 /* m_traverse */
+    NULL,                 /* m_clear */
+    NULL,                 /* m_free */
 };
 
-static PyObject* moduleinit(void) {
+static PyObject *moduleinit(void) {
     PyObject *module;
 
     module = PyModule_Create(&moduledef);

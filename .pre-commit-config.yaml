@@ -2,21 +2,54 @@
 #   pre-commit install --install-hooks
 # To update the versions:
 #   pre-commit autoupdate
-exclude: '^(\.tox|ci/templates|\.bumpversion\.cfg)(/|$)'
+exclude: ^(\.tox|ci/templates|\.bumpversion\.cfg)(/|$)
 # Note the order is intentional to avoid multiple passes of the hooks
 repos:
-  - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.1.1
-    hooks:
-      - id: ruff
-        args: [--fix, --exit-non-zero-on-fix, --show-fixes]
-  - repo: https://github.com/psf/black
-    rev: 23.10.0
-    hooks:
-      - id: black
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
-    hooks:
-      - id: trailing-whitespace
-      - id: end-of-file-fixer
-      - id: debug-statements
+- repo: meta
+  hooks:
+  - id: check-hooks-apply
+  - id: check-useless-excludes
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.5.0
+  hooks:
+  - id: check-added-large-files
+  - id: check-case-conflict
+  - id: check-executables-have-shebangs
+  - id: check-shebang-scripts-are-executable
+  - id: check-toml
+  - id: check-yaml
+  - id: check-vcs-permalinks
+  - id: detect-private-key
+  - id: end-of-file-fixer
+  - id: mixed-line-ending
+  - id: fix-byte-order-marker
+  - id: check-merge-conflict
+  - id: trailing-whitespace
+    args: [--markdown-linebreak-ext=md]
+- repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+  rev: v2.11.0
+  hooks:
+  - id: pretty-format-yaml
+    args: [--autofix, --indent, '2']
+  - id: pretty-format-toml
+    args: [--autofix]
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: v0.1.1
+  hooks:
+  - id: ruff
+    args: [--fix, --exit-non-zero-on-fix, --show-fixes]
+- repo: https://github.com/pre-commit/mirrors-clang-format
+  rev: v17.0.3
+  hooks:
+  - id: clang-format
+    types_or: [c]
+- repo: https://github.com/psf/black
+  rev: 23.10.0
+  hooks:
+  - id: black
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.5.0
+  hooks:
+  - id: trailing-whitespace
+  - id: end-of-file-fixer
+  - id: debug-statements
